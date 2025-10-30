@@ -1,32 +1,35 @@
 {
-  "name": "fhevm-hardhat-template",
-  "description": "Hardhat-based template for developing FHEVM Solidity smart contracts",
+  "name": "blind-oracle",
+  "description": "Privacy-preserving prediction market powered by Zama fhEVM",
   "version": "0.1.0",
   "engines": {
     "node": ">=20",
     "npm": ">=7.0.0"
   },
-  "license": "BSD-3-Clause-Clear",
-  "homepage": "https://github.com/zama-ai/fhevm-hardhat-template/README.md",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/blind-oracle/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zama-ai/fhevm-hardhat-template.git"
+    "url": "git+https://github.com/yourusername/blind-oracle.git"
   },
   "keywords": [
     "fhevm",
     "zama",
-    "eth",
+    "prediction-market",
+    "privacy",
+    "fhe",
     "ethereum",
     "dapps",
-    "wallet",
     "web3",
     "typescript",
     "hardhat"
   ],
   "dependencies": {
-    "encrypted-types": "^0.0.4",
+    "@chainlink/contracts": "^1.5.0",
     "@fhevm/solidity": "^0.8.0",
-    "@zama-fhe/oracle-solidity": "^0.1.0"
+    "@zama-fhe/oracle-solidity": "^0.1.0",
+    "encrypted-types": "^0.0.4",
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@fhevm/hardhat-plugin": "^0.1.0",
