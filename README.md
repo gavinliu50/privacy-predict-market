@@ -368,16 +368,14 @@ const quote = await market.getYesBuyQuote(ethers.parseEther("1.0"));
 
 - 🌐 **Multi-Outcome Markets**: Support for >2 outcomes (e.g., A/B/C/D)
 - 🏆 **Leaderboards**: Track top predictors and earnings
-- 📱 **Mobile App**: Native iOS/Android applications
 - � **Cross-Chain**: Deploy to multiple EVM chains
-- 🤖 **Automated Bots**: Market-making and arbitrage bots
 - 📊 **Analytics Dashboard**: Historical data and market insights
 
 ---
 
 ## 📚 Resources
 
-- **Zama fhEVM Docs**: https://docs.zama.ai/fhevm
+- **Zama fhEVM Docs**: https://docs.zama.ai/protocol
 - **Chainlink Price Feeds**: https://docs.chain.link/data-feeds
 - **Live Deployment**: [Sepolia Etherscan](https://sepolia.etherscan.io/address/0xb8b3a26AD1a1213Cf8c0509442E7B0C766Bd1ebB)
 
