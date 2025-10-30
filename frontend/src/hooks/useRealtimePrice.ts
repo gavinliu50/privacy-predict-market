@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
-export enum PriceAsset {
-  ETH = 'ethereum',
-  BTC = 'bitcoin',
-  SOL = 'solana',
-}
+export const PriceAsset = {
+  ETH: 'ethereum',
+  BTC: 'bitcoin',
+  SOL: 'solana',
+} as const;
+
+export type PriceAsset = typeof PriceAsset[keyof typeof PriceAsset];
 
 interface RealtimePrice {
   price: number | undefined;

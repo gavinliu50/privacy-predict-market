@@ -2,11 +2,13 @@ import { useReadContract } from 'wagmi';
 import ChainlinkPriceOracleABI from '../ChainlinkPriceOracleABI.json';
 
 // Asset enum matching the contract
-export enum Asset {
-  ETH = 0,
-  BTC = 1,
-  SOL = 2,
-}
+export const Asset = {
+  ETH: 0,
+  BTC: 1,
+  SOL: 2,
+} as const;
+
+export type Asset = typeof Asset[keyof typeof Asset];
 
 export function useChainlinkPrice(oracleAddress: `0x${string}` | undefined, asset: Asset) {
   const { data, isLoading, error, refetch } = useReadContract({

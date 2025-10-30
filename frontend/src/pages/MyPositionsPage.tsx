@@ -5,8 +5,8 @@ import { formatEther } from 'viem';
 import { useUserPositions } from '../hooks/useUserPositions';
 
 export default function MyPositionsPage() {
-  const { isConnected, address } = useAccount();
-  const { activePositions, settledPositions, isLoading, error } = useUserPositions();
+  const { isConnected } = useAccount();
+  const { activePositions, settledPositions, isLoading } = useUserPositions();
 
   const totalMarkets = activePositions.length + settledPositions.length;
 

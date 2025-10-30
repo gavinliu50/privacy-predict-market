@@ -1,5 +1,5 @@
 import { useWriteContract, useReadContract, useWaitForTransactionReceipt, useAccount } from 'wagmi';
-import { parseEther, toHex } from 'viem';
+import { parseEther } from 'viem';
 import { CONTRACT_CONFIG } from '../config';
 import BlindOracleABI from '../BlindOracleABI.json';
 import { useFhevm } from './useFhevm';
@@ -216,10 +216,11 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
 
   // Buy YES tokens
   const buyYesTokens = async (amount: string) => {
+    if (!marketAddress) return;
     const amountWei = parseEther(amount);
     writeContract({
-      address: CONTRACT_CONFIG.address,
-      abi: BlindOracleABI,
+      address: marketAddress,
+      abi: BlindOracleABI.abi as any,
       functionName: 'buyYesTokens',
       value: amountWei,
     });
@@ -227,10 +228,11 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
 
   // Buy NO tokens
   const buyNoTokens = async (amount: string) => {
+    if (!marketAddress) return;
     const amountWei = parseEther(amount);
     writeContract({
-      address: CONTRACT_CONFIG.address,
-      abi: BlindOracleABI,
+      address: marketAddress,
+      abi: BlindOracleABI.abi as any,
       functionName: 'buyNoTokens',
       value: amountWei,
     });
@@ -238,10 +240,11 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
 
   // Sell YES tokens
   const sellYesTokens = async (amount: string) => {
+    if (!marketAddress) return;
     const amountWei = parseEther(amount);
     writeContract({
-      address: CONTRACT_CONFIG.address,
-      abi: BlindOracleABI,
+      address: marketAddress,
+      abi: BlindOracleABI.abi as any,
       functionName: 'sellYesTokens',
       args: [amountWei],
     });
@@ -249,10 +252,11 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
 
   // Sell NO tokens
   const sellNoTokens = async (amount: string) => {
+    if (!marketAddress) return;
     const amountWei = parseEther(amount);
     writeContract({
-      address: CONTRACT_CONFIG.address,
-      abi: BlindOracleABI,
+      address: marketAddress,
+      abi: BlindOracleABI.abi as any,
       functionName: 'sellNoTokens',
       args: [amountWei],
     });
