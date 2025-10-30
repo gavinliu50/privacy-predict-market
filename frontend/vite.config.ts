@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import { fileURLToPath } from 'url'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -45,8 +46,8 @@ export default defineConfig({
     alias: {
       'process': 'process/browser',
       'buffer': 'buffer',
-      'keccak': '/src/polyfills/keccak.ts',
-      'fetch-retry': '/src/polyfills/fetch-retry.ts',
+      'keccak': fileURLToPath(new URL('./src/polyfills/keccak.ts', import.meta.url)),
+      'fetch-retry': fileURLToPath(new URL('./src/polyfills/fetch-retry.ts', import.meta.url)),
     },
   },
   optimizeDeps: {
