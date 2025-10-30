@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
-import { fileURLToPath } from 'url'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -36,7 +35,6 @@ export default defineConfig({
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
-      include: [/keccak/, /node_modules/],
     },
   },
   define: {
@@ -46,8 +44,6 @@ export default defineConfig({
     alias: {
       'process': 'process/browser',
       'buffer': 'buffer',
-      'keccak': fileURLToPath(new URL('./src/polyfills/keccak.ts', import.meta.url)),
-      'fetch-retry': fileURLToPath(new URL('./src/polyfills/fetch-retry.ts', import.meta.url)),
     },
   },
   optimizeDeps: {
@@ -61,8 +57,6 @@ export default defineConfig({
     // Exclude problematic packages, let Vite handle them directly
     exclude: [
       '@zama-fhe/relayer-sdk',
-      'keccak',
-      'fetch-retry',
     ],
     // Fix RainbowKit's vanilla-extract CSS issue
     include: [
