@@ -1,6 +1,5 @@
 import { useWriteContract, useReadContract, useWaitForTransactionReceipt, useAccount } from 'wagmi';
 import { parseEther } from 'viem';
-import { CONTRACT_CONFIG } from '../config';
 import BlindOracleABI from '../BlindOracleABI.json';
 import { useFhevm } from './useFhevm';
 
@@ -222,6 +221,7 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
       address: marketAddress,
       abi: BlindOracleABI.abi as any,
       functionName: 'buyYesTokens',
+      args: [],
       value: amountWei,
     });
   };
@@ -234,6 +234,7 @@ export function useBlindOracle(marketAddress: `0x${string}` | undefined) {
       address: marketAddress,
       abi: BlindOracleABI.abi as any,
       functionName: 'buyNoTokens',
+      args: [],
       value: amountWei,
     });
   };
